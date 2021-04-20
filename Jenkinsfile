@@ -1,12 +1,15 @@
 pipeline {
-    agent {
-        label 'master'
-    }
+    agent any
     stages {
-        stage('Build') {
-            steps{
-                echo 'mvn install'
+        stage('Example') {
+            steps {
+                echo 'Hello World'
             }
+        }
+    }
+    post { 
+        always { 
+            echo 'I will always say Hello again!'
         }
     }
 }
