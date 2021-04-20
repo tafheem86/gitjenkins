@@ -1,0 +1,19 @@
+node {
+state ('SCM checkout') {
+//checkout from your SCM (Source control Management)
+//for ex: Git Checkout
+}
+State('Build') {
+//compile code
+//install dependencies
+//perform Unit Test, Integration Test
+}
+state ('Test') {
+//resolve test server dependecies
+//perform UAT
+}
+Stage ('deploy') {
+//deploy code to prod server
+//solve dependency issues
+}
+}
