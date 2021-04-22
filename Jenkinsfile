@@ -1,17 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('Example') {
+        stage('preparation') {
             steps {
-                echo 'Hello World'
-BUILD_TRIGGER_BY = "${currentBuild.getBuildCauses()[0].userId}"
-echo "BUILD_TRIGGER_BY: ${BUILD_TRIGGER_BY}"
+                script{
+                    def buildCause = currentBuild.getBuildCause()[0].shortDescription
+                    echo " Current build was caused by: ${buildCause}\n"
+                }
             }
-          }
-        }
-     post { 
-        always { 
-            echo 'I will always say Hello again!'
         }
     }
 }
+               
